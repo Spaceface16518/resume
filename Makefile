@@ -5,3 +5,8 @@ CV.pdf: CV.tex
 
 clean:
 	latexmk -C
+
+.PHONY: preview
+
+preview:
+	xdg-open CV.pdf
