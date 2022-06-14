@@ -1,4 +1,4 @@
-name: CI
+name: Latex
 
 on:
   push:
@@ -14,3 +14,9 @@ jobs:
         uses: dante-ev/latex-action@latest
         with:
           root_file: CV.tex
+      - name: Upload to Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: meeDamian/github-release@2.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: CV.pdf
