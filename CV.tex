@@ -1,155 +1,109 @@
-% !TeX spellcheck = en_US
-\documentclass[
-    10pt,
-    A4,
-    english,
-    draft = false,
-    twoside = false,
-]{article}
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
 
-\usepackage{curriculum-vitae}
 
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-red}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+% \photo[rectangle,edge,right]{./examples/profile}
+\name{Byungjin}{Park}
+\position{Software Architect{\enskip\cdotp\enskip}Security Expert}
+\address{42-8, Bangbae-ro 15-gil, Seocho-gu, Seoul, 00681, Rep. of KOREA}
+
+\mobile{(+82) 10-9030-1843}
+\email{posquit0.bj@gmail.com}
+\homepage{www.posquit0.com}
+\github{posquit0}
+\linkedin{posquit0}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{madium-id}
+% \googlescholar{googlescholar-id}{name-to-display}
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra informations}
+
+\quote{``Be the change that you want to see in the world."}
+
+
+%-------------------------------------------------------------------------------
 \begin{document}
-	%	Basic information	
-	\setname{Amrit}{Rathie}
-	\setaddress{Grapevine, Texas}
-	\setmobile{(817) 888-1378}
-	\setmail{amrit.rathie@utdallas.edu}
-	\setlinkedin{https://www.linkedin.com/in/amrit-rathie-9952a7224/}
-	\setgithub{https://github.com/Spaceface16518}
-	\setblog{https://www.amritr.xyz/posts}
-	
-	%---------------------------------------------------------------------------------------
-	%	Title + Contact
-	%----------------------------------------------------------------------------------------
-	\cvtitle{Resume}
-	%---------------------------------------------------------------------------------------
-	%	Summary / Objectives
-	%----------------------------------------------------------------------------------------
-	\cvSection{Summary}
-        \CVTextBlock{Computer Science student at UT Dallas studying Systems
-        Programming. I am proficient in the Rust programming
-        language, contributing more than 20,000 lines of Rust code to more than
-        40 Open-Source projects. I'm a versatile programmer and a quick
-        learner, committed to using the right tool for each task.}
-	%---------------------------------------------------------------------------------------
-	%	Current Position
-	%----------------------------------------------------------------------------------------
-%	\cvSection{Current Position}
-	%---------------------------------------------------------------------------------------
-	%	Education
-	%----------------------------------------------------------------------------------------
-	\cvSection{Education}
-        \CVBlockWithTime{The University of Texas at Dallas}{2021 - Present} {BS
-        in Computer Science, expected graduation: May 2025}{Richardson, Texas}
-	{\textbf{GPA:} 3.22}
-        \CVBlockWithTime{Grapevine High School}{2018 - 2021} {High School
-        Diploma}{Grapevine, Texas}
-	{\textbf{GPA:} 3.3}
-	%---------------------------------------------------------------------------------------
-	%	Skills
-	%----------------------------------------------------------------------------------------
-	\cvSection{Skills}
-	\tab \begin{tabular}{r p{0.7\textwidth}}
-                \texttt{\large Programming Languages} & \textbf{Expert:} Rust
-                \cvContactSep Python \\ & \textbf{Experienced:} Go
-                \cvContactSep JavaScript \cvContactSep SQL \\ &
-                \textbf{Familiar:} C \cvContactSep C++ \cvContactSep Java
-                \cvContactSep Haskell \cvContactSep Bash \cvContactSep \LaTeX
-                \cvContactSep X86, MIPS, \& ARM Assembly\\
-                \texttt{\large Tools} & Git \cvContactSep Linux \cvContactSep
-                Docker \cvContactSep Ansible \cvContactSep Kubernates
-                \cvContactSep Cloudflare \cvContactSep AWS \cvContactSep
-                PostgreSQL \\
-                \texttt{\large Libraries} & Numpy \cvContactSep Pandas
-                \cvContactSep Seaborn \cvContactSpace Nuxt.js \cvContactSep
-                Next.js \cvContactSpace Tokio \cvContactSep Clap \cvContactSep
-                Serde \\
-                \texttt{\large Languages} & \textbf{Native:} English \\ &
-                \textbf{Beginner:} Hindi \cvContactSep Marathi \cvContactSep
-                American Sign Language \\
-	\end{tabular}\\~\\
-	%---------------------------------------------------------------------------------------
-	%	Projects and Contributions
-	%----------------------------------------------------------------------------------------
-        \cvSection{Projects \& Contributions}
-        \tab \begin{tabular}{r p{0.7\textwidth}}
-            \texttt{\large Reesisms} & Developed an interactive and engaging
-            website dedicated to my High School Band Director. Built with
-            Vue.js and MongoDB, and hosted on Vercel and MongoDB Atlas. \\
-            \texttt{\large Rust} & Contributed to many eminent Rust projects,
-            including rust-phf, topgrade, cargo-cache, fd, and rust itself.
-        \end{tabular}\\~\\
-	%---------------------------------------------------------------------------------------
-	%	Experience (Research and Industry)
-	%----------------------------------------------------------------------------------------
-%	\cvSection{Experience (Research \& Industry)}
-	\cvSection{Industry Experience}
-	\CVBlockWithTime{Mobile Applications Development Intern}{Summer
-	2020}{ObjectWin, Inc.}{Houston, Texas (Remote)}
-        {Developed frontend components of a cross-platform mobile time-sheet
-        entry application using AngularJS and Ionic, and collaborated with a
-        globally distributed team to connect frontend to Microsoft SQL Server
-        database using Node.js. The mobile application ameliorated time-sheet
-        entry for consultants.}
-	\CVBlockWithTime{Swarm Robotics Researcher}{August 2021 - November
-	2021}{ACM UTD}{Dallas, Texas}
-	{Worked with an ACM research team to compare algorithms for swarm
-	robotics. Designed real-world simulation with C++ and performed data
-	analysis and visulization with Python.}
 
-	
-	\newpage
-	
-	%---------------------------------------------------------------------------------------
-	%	Awards and Distinction
-	%----------------------------------------------------------------------------------------
-	\cvSection{Honors \& Awards}
-        \CVBlockWithTime{AP Scholar with Distinction}{2019 \cvContactSep 2020
-        \cvContactSep 2021}{Grapevine High School}{Global}
-        {Granted to students who receive an average score of at least 3.5 on
-        all AP Exams taken, and scores of 3 or higher on five or more of these
-        exams.}
-	\CVBlockWithTime{National AP Scholar}{2020}{Grapevine High School}{United States}
-        {Granted to students in the United States who receive an average score
-        of at least 4 on all AP Exams taken, and scores of 4 or higher on eight
-        or more of these exams.}
-        \CVBlockWithTime{Director's Choice}{2019}{Grapevine High School
-        Band}{Grapevine, Texas}
-        {Offered to two students per year that exemplify core values of the
-        Grapevine High School Band.}
-	%---------------------------------------------------------------------------------------
-	%	Teaching Experience
-	%----------------------------------------------------------------------------------------
-%	\cvSection{Teaching Experience}	
-	%---------------------------------------------------------------------------------------
-	%	Extra Curricular Activities
-	%----------------------------------------------------------------------------------------
-%	\newpage
-	\cvSection{Extracurricular Activities}
-        \CVBlockWithTime{UTD CACP Vice-President}{2022 - Present}{Comets Against
-        Computer Programming}{University of Texas at Dallas}
-        {Currently serving as Vice-President of the satirical/comedic charity
-        club at UT Dallas. As VP, I manage compliance with the SOC and ensure
-        completion of goals set by the internal supervisory board. Raised over
-        \$160 for the EFF, Partners in Health, and Health in Harmony during our
-        first charity event in 2022.}
-        \CVBlockWithTime{Band Leadership Team}{2019 - 2020}{Grapevine High
-        School Band}{Grapevine High School}
-        {Served as flute section leader of the Grapevine High School band,
-        managing training of new members, uniform logistics, social events, and
-        coordination with other leaders.}
-        \CVBlockWithTime{Debate Team}{2018-2020}{Grapevine High School Debate
-        Team}{Grapevine High School}
-        {Competed in multiple debate events at district, regional, and state
-        level tournaments. Won 2nd place at the Plano East regional tournament
-        in Public forum debate and placed in the top 8 at the Texas Forensic
-        Association State Debate tournament.}
-	%---------------------------------------------------------------------------------------
-% 	\cvSection{Teaching Experience}
-% 	\cvSection{Professional Activities}
-% 	\cvSection{Invited Talks}
-% 	\cvSection{Selected Press Coverage}
-% 	\cvSection{Publications}
-	%----------------------------------------------------------------------------------------
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[C]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  {Byungjin Park~~~·~~~Résumé}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%-------------------------------------------------------------------------------
+\input{resume/summary.tex}
+\input{resume/experience.tex}
+\input{resume/honors.tex}
+\input{resume/presentation.tex}
+\input{resume/writing.tex}
+\input{resume/committees.tex}
+\input{resume/education.tex}
+\input{resume/extracurricular.tex}
+
+
+%-------------------------------------------------------------------------------
 \end{document}
