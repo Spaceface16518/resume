@@ -1,0 +1,58 @@
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
+
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-red}
+
+\setbool{acvSectionColorHighlight}{false}
+
+% Available options: circle|rectangle,edge/noedge,left/right
+% \photo[rectangle,edge,right]{./examples/profile}
+\name{Amrit}{Rathie}
+\position{Software Engineering Intern} % change this for each position
+\address{3401 Lookout Ct, Grapevine, TX 76051}
+
+\mobile{(817) 888-1378}
+\email{amrit.rathie@utdallas.edu}
+\homepage{www.amritr.xyz}
+\github{Spaceface16518}
+\linkedin{amrit-rathie-9952a7224}
+\reddit{Spaceface16518}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \medium{madium-id}
+% \googlescholar{googlescholar-id}{name-to-display}
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra informations}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[C]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+\makecvfooter
+  {\today}
+  {Amrit Rathie~~~·~~~Résumé}
+  {\thepage}
+
+
+\input{projects.tex}
+\input{experience.tex}
+\input{skills.tex} % TODO
+\input{education.tex}
+\input{honors.tex}
+%\input{resume/extracurricular.tex} % TODO
+
+
+\end{document}
