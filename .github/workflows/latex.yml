@@ -1,36 +1,26 @@
-name: Latex
-
-on:
+name: Build Resume
+on: 
   push:
-
-  workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Compile LaTeX document
-        uses: dante-ev/latex-action@latest
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        name: Tectonic Cache
         with:
-          root_file: CV.tex
-      - uses: actions/upload-artifact@v3
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('*/*.tex') }}
+          restore-keys: |
+           ${{ runner.os }}-tectonic-
+      - uses: wtfjoke/setup-tectonic@v2
         with:
-          name: CV.pdf
-          path: CV.pdf
-          if-no-files-found: error
-  upload:
-    needs: [build]
-    runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/')
-    steps:
-      - name: Download build artifact
-        uses: actions/download-artifact@v3
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run Tectonic
+        run: tectonic -X compile 'Resume.tex' --synctex --keep-logs
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3
         with:
-          name: CV.pdf
-      - name: Upload to Release
-        if: startsWith(github.ref, 'refs/tags/')
-        uses: meeDamian/github-release@2.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          files: CV.pdf
+          name: Resume
+          path: Resume.pdf
