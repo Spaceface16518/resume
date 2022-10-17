@@ -11,7 +11,7 @@ jobs:
         name: Tectonic Cache
         with:
           path: ~/.cache/Tectonic
-          key: ${{ runner.os }}-tectonic-${{ hashFiles('*/*.tex') }}
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('*.tex') }}
           restore-keys: |
            ${{ runner.os }}-tectonic-
       - uses: wtfjoke/setup-tectonic@v2
